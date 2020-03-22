@@ -4,14 +4,25 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <Authors>Jiří Tůma</Authors>
     <Company>Olbrasoft</Company>
-    <Description>Register classes for Mapping</Description>
+    <Description>Register classes for Mapping and Projection implemented using a Mapster.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>mapster-mapping.png</PackageIcon>
+    <RepositoryUrl>https://github.com/Olbrasoft/Mapping.Mapster.DependencyInjection.Microsoft</RepositoryUrl>
+    <RepositoryType>DotNetStandard 2.1 Library</RepositoryType>
+    <PackageTags>Maping Projection Mapster Dependency Injection</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Mapster.DependencyInjection" Version="1.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.2" />
     <PackageReference Include="Olbrasoft.Mapping.Mapster" Version="1.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\mapster-mapping.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

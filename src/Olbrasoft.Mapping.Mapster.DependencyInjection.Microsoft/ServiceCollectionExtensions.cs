@@ -7,7 +7,7 @@ namespace Olbrasoft.Mapping.Mapster.DependencyInjection.Microsoft
 {
     public static class ServiceCollectionExtensions
     {
-        public static void AddProjection(this IServiceCollection services, params Assembly[] assemblies)
+        public static void AddMapping(this IServiceCollection services, params Assembly[] assemblies)
         {
             var config = new TypeAdapterConfig();
 
