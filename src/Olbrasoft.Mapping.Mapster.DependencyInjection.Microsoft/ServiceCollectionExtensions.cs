@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Mapster;
+using MapsterMapper;
+using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 namespace Olbrasoft.Mapping.Mapster.DependencyInjection.Microsoft
@@ -7,8 +9,16 @@ namespace Olbrasoft.Mapping.Mapster.DependencyInjection.Microsoft
     {
         public static void AddProjection(this IServiceCollection services, params Assembly[] assemblies)
         {
-            services.AddMapster(assemblies);
+            var config = new TypeAdapterConfig();
 
+            if (assemblies.Length > 0) config.Scan(assemblies);
+
+            services.AddSingleton(config);
+
+            services.AddScoped<global::MapsterMapper.IMapper, ServiceMapper>();
+
+            services.AddScoped<IProjector, MapsterProjector>();
+            
             services.AddScoped<IMapper, MapsterMapper>();
         }
     }
